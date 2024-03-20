@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,22 +7,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Appointment</h1>
-    </header>
-    
-    <nav>
-        <!-- Navigation Bar (same as index.html) -->
-    </nav>
 
+<header>
+    <h1>Book an Appointment</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="medicines.html">Medicines</a></li>
+        <li><a href="questions.html">Questionnaire</a></li>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="diagnosis.html">Diagnosis</a></li>
+        <li><a href="appointment.html">Appointment</a></li>
+    </ul>
+</nav>
+
+<main>
     <section>
         <h2>Appointment Scheduling</h2>
-        <p>Schedule an appointment and view registration charges:</p>
-        <!-- Add appointment scheduling form and registration charges -->
-    </section>
+        <p>Schedule your appointment with our doctors:</p>
+        <form id="appointmentForm" action="path/to/server-side-script" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-    <footer>
-        <!-- Footer (same as index.html) -->
-    </footer>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="tel" id="contact" name="contact" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="medicalProblem">Medical Problem:</label>
+                <textarea id="medicalProblem" name="medicalProblem" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="appointmentDate">Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+            </div>
+
+            <button type="submit" class="button">Book Appointment</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 HarmonyHeal</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
