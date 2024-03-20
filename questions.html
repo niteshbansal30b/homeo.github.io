@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homeopathic Questions</title>
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </head>
 <body>
     <h1>Homeopathic Questions</h1>
@@ -15,7 +16,7 @@
         <!-- Add more form fields here -->
         <button type="submit">Submit</button>
     </form>
-
+    <div id="output"></div>
     <script>
         document.getElementById("questionsForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form submission from refreshing the page
