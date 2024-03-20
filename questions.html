@@ -4,39 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Questions</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Health Questions</h1>
+
+<header>
+    <h1>Health Questions</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="medicines.html">Medicines</a></li>
+        <li><a href="questions.html">Questionnaire</a></li>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="diagnosis.html">Diagnosis</a></li>
+        <li><a href="appointment.html">Appointment</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <section>
+        <h2>Fill out your health questionnaire</h2>
         <form id="healthForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required><br>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
 
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select><br>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
 
-            <label for="symptoms">Symptoms:</label>
-            <textarea id="symptoms" name="symptoms" rows="4" required></textarea><br>
+            <div class="form-group">
+                <label for="symptoms">Symptoms:</label>
+                <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+            </div>
 
-            <label for="medicalHistory">Medical History:</label>
-            <textarea id="medicalHistory" name="medicalHistory" rows="4"></textarea><br>
+            <div class="form-group">
+                <label for="medicalHistory">Medical History:</label>
+                <textarea id="medicalHistory" name="medicalHistory" rows="4"></textarea>
+            </div>
 
-            <label for="medications">Current Medications:</label>
-            <textarea id="medications" name="medications" rows="4"></textarea><br>
+            <div class="form-group">
+                <label for="medications">Current Medications:</label>
+                <textarea id="medications" name="medications" rows="4"></textarea>
+            </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="button">Submit</button>
         </form>
-        <div id="output"></div>
-    </div>
+    </section>
+    <div id="output"></div>
+</main>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+<footer>
+    <p>&copy; 2024 HarmonyHeal</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
