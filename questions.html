@@ -3,53 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homeopathic Questions</title>
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+    <title>Health Questions</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <h1>Homeopathic Questions</h1>
-    <form id="questionsForm">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age" required><br>
-        <!-- Add more form fields here -->
-        <button type="submit">Submit</button>
-    </form>
-    <div id="output"></div>
-    <script>
-        document.getElementById("questionsForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission from refreshing the page
-            
-            // Get form data
-            let formData = new FormData(this);
+    <div class="container">
+        <h1>Health Questions</h1>
+        <form id="healthForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
 
-            // Convert form data to object
-            let data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
 
-            // Validate form data
-            if (!data.name || !data.age) {
-                alert("Name and age are required fields");
-                return;
-            }
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
 
-            // Format data (optional)
-            let formattedData = `Name: ${data.name}<br>Age: ${data.age}<br>`;
-            // Add more formatting as needed
-            
-            // Display formatted data (optional)
-            document.getElementById("output").innerHTML = formattedData;
+            <label for="symptoms">Symptoms:</label>
+            <textarea id="symptoms" name="symptoms" rows="4" required></textarea><br>
 
-            // Clear form fields (optional)
-            this.reset();
-        });
-    </script>
+            <label for="medicalHistory">Medical History:</label>
+            <textarea id="medicalHistory" name="medicalHistory" rows="4"></textarea><br>
 
-    <!-- Output area for displaying formatted data -->
-    <div id="output"></div>
+            <label for="medications">Current Medications:</label>
+            <textarea id="medications" name="medications" rows="4"></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
 </html>
-
