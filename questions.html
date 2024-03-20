@@ -3,57 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questionnaire</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Homeopathic Questions</title>
 </head>
 <body>
-    <header>
-        <h1>Questionnaire</h1>
-    </header>
-    
-    <nav>
-        <!-- Navigation Bar (same as index.html) -->
-    </nav>
+    <h1>Homeopathic Questions</h1>
+    <form id="questionsForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" required><br>
+        <!-- Add more form fields here -->
+        <button type="submit">Submit</button>
+    </form>
 
-    <section>
-        <h2>Personal Questions</h2>
-        <p>Answer the following questions to help us understand your health profile:</p>
-        <form action="submit_form.py" method="post">
-            <label for="name">1. What is your full name?</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+    <script>
+        document.getElementById("questionsForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission from refreshing the page
+            
+            // Get form data
+            let formData = new FormData(this);
 
-            <label for="age">2. How old are you?</label><br>
-            <input type="number" id="age" name="age" required><br><br>
+            // Convert form data to object
+            let data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
 
-            <label for="gender">3. What is your gender?</label><br>
-            <select id="gender" name="gender" required>
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select><br><br>
+            // Validate form data
+            if (!data.name || !data.age) {
+                alert("Name and age are required fields");
+                return;
+            }
 
-            <label for="symptoms">4. Describe your current symptoms:</label><br>
-            <textarea id="symptoms" name="symptoms" rows="4" cols="50" required></textarea><br><br>
+            // Format data (optional)
+            let formattedData = `Name: ${data.name}<br>Age: ${data.age}<br>`;
+            // Add more formatting as needed
+            
+            // Display formatted data (optional)
+            document.getElementById("output").innerHTML = formattedData;
 
-            <label for="medical_history">5. Do you have any medical history or chronic conditions?</label><br>
-            <textarea id="medical_history" name="medical_history" rows="4" cols="50"></textarea><br><br>
+            // Clear form fields (optional)
+            this.reset();
+        });
+    </script>
 
-            <label for="medications">6. Are you currently taking any medications or supplements?</label><br>
-            <textarea id="medications" name="medications" rows="4" cols="50"></textarea><br><br>
-
-            <label for="allergies">7. Do you have any allergies?</label><br>
-            <textarea id="allergies" name="allergies" rows="4" cols="50"></textarea><br><br>
-
-            <label for="lifestyle">8. Describe your lifestyle habits (e.g., diet, exercise, sleep):</label><br>
-            <textarea id="lifestyle" name="lifestyle" rows="4" cols="50"></textarea><br><br>
-
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
-    <footer>
-        <!-- Footer (same as index.html) -->
-    </footer>
+    <!-- Output area for displaying formatted data -->
+    <div id="output"></div>
 </body>
 </html>
+
