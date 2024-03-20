@@ -18,9 +18,9 @@ def book_appointment():
     email_body = f"Appointment Details:\n\nDate: {appointment_date}\nDoctor: {doctor}\nName: {name}\nContact: {contact}\nMedical Problem: {medical_problem}"
 
     # Send email (this is a simplified example; you'll need to configure it with your SMTP details)
-    sender_email = "your_email@example.com"  # Change to your email
-    receiver_emails = ["nituajaipur@gmail.com", "monikabansaljp@gmail.com"]
-    password = "your_password"  # Change to your email password or app-specific password
+    sender_email = "dummyguy777@yahoo.com"  # Change to your email
+    receiver_emails = ["nitujaipur@gmail.com", "monikabansaljp@gmail.com"]
+    password = "Mum@0619"  # Change to your email password or app-specific password
 
     message = MIMEMultipart()
     message["From"] = sender_email
